@@ -1,12 +1,3 @@
-# microservice-dingding-testgateway
-
-# 说明
-
-这个项目演示了整合一个zuul + nacos
-
-# nacos中的配置（见：bar.yaml），也就是说你需要在nacos配置中心添加这个配置
-
-```
 zuul:
     routes:
         nacos-consumer-demo:
@@ -91,6 +82,3 @@ hystrix:
                 isolation:
                     thread:
                         timeoutInMilliseconds: 10000
-
-```
-
