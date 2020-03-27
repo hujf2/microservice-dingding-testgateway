@@ -1,0 +1,39 @@
+
+spring:
+  datasource:
+    dynamic:
+      p6spy: true
+      druid:
+        filters: stat
+      datasource:
+        master:
+          username: sa
+          password: "LYIXYTfaq9ug7bqAfcoU1gQovp/Atx7wsdJ5D7oFN5QMqZUI4OGHyMkCA7IxtYAIQr/8cMVFGo9oa/mqtMrzmQ=="
+          url: jdbc:h2:mem:test
+          driver-class-name: org.h2.Driver
+          schema: db/schema.sql
+          druid: #这里可以重写默认值
+            initial-size: 5
+            public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKUVA/IL/iON8f63bv2i/pIAK+1sXY228slLkTKrI9axwBMIoPV7+PqdRTv6uqMl3j6nei0EDBWEu/Wp/qOQ/ScCAwEAAQ==
+        slave_2:
+          username: root
+          password: 123456
+          url: jdbc:mysql://192.168.88.163:3306/db_alert?characterEncoding=utf-8
+          driver-class-name: com.mysql.cj.jdbc.Driver
+
+        slave_3:
+          username: sa
+          password: "123456"
+          url: jdbc:h2:mem:test
+          driver-class-name: org.h2.Driver
+logging:
+  level:
+    com.baomidou: debug
+    org.springframework.jdbc.datasource.init: debug
+
+mybatis:
+  mapper-locations: classpath*:mapper/com/**/*Mapper.xml
+  type-aliases-package: tk.mybatis.springboot.model
+
+server:
+  port: 9999
